@@ -4,6 +4,7 @@
 package it.unibo.oop.lab.nesting1;
 
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 import it.unibo.oop.lab.socialnetwork.SocialNetworkUserImpl;
@@ -125,7 +126,7 @@ public class SportSocialNetworkUserImpl<U extends User> extends SocialNetworkUse
      * Complete the definition of this static inner class defining a Sport along
      * with its bare name.
      */
-    public static final class Sport{
+    public static final class Sport {
 	/*
 	 * TODO
 	 * 
@@ -141,10 +142,7 @@ public class SportSocialNetworkUserImpl<U extends User> extends SocialNetworkUse
 
 	@Override
 	public int hashCode() {
-	    final int prime = 31;
-	    int result = 1;
-	    result = prime * result + ((name == null) ? 0 : name.hashCode());
-	    return result;
+	    return Objects.hash(name);
 	}
 
 
@@ -153,24 +151,10 @@ public class SportSocialNetworkUserImpl<U extends User> extends SocialNetworkUse
 	 */
 	@Override
 	public boolean equals(Object obj) {
-	    if (this == obj) {
-		return true;
+	    if (obj instanceof Sport) {
+		return Objects.equals(this.name, ((Sport) obj).name);
 	    }
-	    if (obj == null) {
-		return false;
-	    }
-	    if (getClass() != obj.getClass()) {
-		return false;
-	    }
-	    Sport other = (Sport) obj;
-	    if (name == null) {
-		if (other.name != null) {
-		    return false;
-		}
-	    } else if (!name.equals(other.name)) {
-		return false;
-	    }
-	    return true;
+	    return false;
 	}
     }
 }
