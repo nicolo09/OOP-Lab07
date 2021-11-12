@@ -43,7 +43,7 @@ public class SportSocialNetworkUserImpl<U extends User> extends SocialNetworkUse
      *                application
      */
     public SportSocialNetworkUserImpl(final String name, final String surname, final String user) {
-	this(name, surname, user, -1);
+        this(name, surname, user, -1);
     }
 
     /**
@@ -56,7 +56,7 @@ public class SportSocialNetworkUserImpl<U extends User> extends SocialNetworkUse
      *                application
      */
     public SportSocialNetworkUserImpl(final String name, final String surname, final String user, final int userAge) {
-	super(name, surname, user, userAge);
+        super(name, surname, user, userAge);
     }
 
     /*
@@ -71,9 +71,8 @@ public class SportSocialNetworkUserImpl<U extends User> extends SocialNetworkUse
      * 
      * @param sport a sport followed/done by the user
      */
-    // TODO
     public void addSport(final Sport sport) {
-	sports.add(sport);
+        sports.add(sport);
     }
 
     /**
@@ -84,6 +83,6 @@ public class SportSocialNetworkUserImpl<U extends User> extends SocialNetworkUse
      * @return true if the user likes sport s
      */
     public boolean hasSport(final Sport s) {
-	return sports.contains(s);
+        return sports.contains(s);
     }
 }

@@ -43,7 +43,7 @@ public class Sport2SocialNetworkUserImpl<U extends User> extends SocialNetworkUs
      *                application
      */
     public Sport2SocialNetworkUserImpl(final String name, final String surname, final String user) {
-	this(name, surname, user, -1);
+        this(name, surname, user, -1);
     }
 
     /**
@@ -56,7 +56,7 @@ public class Sport2SocialNetworkUserImpl<U extends User> extends SocialNetworkUs
      *                application
      */
     public Sport2SocialNetworkUserImpl(final String name, final String surname, final String user, final int userAge) {
-	super(name, surname, user, userAge);
+        super(name, surname, user, userAge);
     }
 
     /*
@@ -70,7 +70,7 @@ public class Sport2SocialNetworkUserImpl<U extends User> extends SocialNetworkUs
      * @param sport a sport followed/done by the user
      */
     public void addSport(final Sport sport) {
-	sports.add(sport);
+        sports.add(sport);
     }
 
     /**
@@ -81,7 +81,7 @@ public class Sport2SocialNetworkUserImpl<U extends User> extends SocialNetworkUs
      * @return true if user likes sport s
      */
     public boolean likesSport(final Sport s) {
-	return sports.contains(s);
+        return sports.contains(s);
     }
 
     /*
@@ -96,7 +96,7 @@ public class Sport2SocialNetworkUserImpl<U extends User> extends SocialNetworkUs
      */
 
     public Set<Sport> getIndividualSports() {
-	return new HashSet<>(this.sports);
+        return new HashSet<>(this.sports);
     }
 
     /**
@@ -109,13 +109,13 @@ public class Sport2SocialNetworkUserImpl<U extends User> extends SocialNetworkUs
      */
 
     public Set<Sport> getSportPracticedInPlace(Place p) {
-	Set<Sport> result = new HashSet<>();
-	for (Sport s : this.sports) {
-	    if (s.getPlace() == p) {
-		result.add(s);
-	    }
-	}
-	return result;
+        Set<Sport> result = new HashSet<>();
+        for (Sport s : this.sports) {
+            if (s.getPlace() == p) {
+                result.add(s);
+            }
+        }
+        return result;
     }
 
 }
