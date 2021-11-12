@@ -3,14 +3,13 @@ package it.unibo.oop.lab.nesting2;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class OneListAcceptable<T> implements Acceptable<T> {
 
     /**
-     * Represents a List-based acceptor which accept a list in his constructor
-     * and accepts exactly the sequence of elements contained in that list
+     * Represents a List-based acceptor which accept a list in his constructor and
+     * accepts exactly the sequence of elements contained in that list
      */
-    
+
     class OneListAcceptor implements Acceptor<T> {
 
         List<T> acceptorList;
@@ -21,10 +20,6 @@ public class OneListAcceptable<T> implements Acceptable<T> {
             index = 0;
         }
 
-        
-        /**
-         *
-         */
         @Override
         public void accept(T newElement) throws ElementNotAcceptedException {
             if (Integer.compare(index, acceptorList.size()) < 0 && acceptorList.get(index).equals(newElement)) {
@@ -42,7 +37,7 @@ public class OneListAcceptable<T> implements Acceptable<T> {
             }
 
         }
-    };
+    }
 
     OneListAcceptor acc;
 
