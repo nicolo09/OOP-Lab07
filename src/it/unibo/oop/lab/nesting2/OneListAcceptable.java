@@ -21,7 +21,7 @@ public class OneListAcceptable<T> implements Acceptable<T> {
         }
 
         @Override
-        public void accept(T newElement) throws ElementNotAcceptedException {
+        public void accept(final T newElement) throws ElementNotAcceptedException {
             if (Integer.compare(index, acceptorList.size()) < 0 && acceptorList.get(index).equals(newElement)) {
                 index++;
             } else {
